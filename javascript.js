@@ -5,36 +5,48 @@ var getComputerChoice = (array[(Math.floor((Math.random() * array.length)))])
 
 function game(playerSelection, computerSelection = (array[(Math.floor((Math.random() * array.length)))])) {
     if (playerSelection === "rock" && computerSelection === "paper"){
-        return "You lose!"
+        return "Computer chose PAPER against your ROCK. You lose!"
     } if (playerSelection === "rock" && computerSelection === "scissor"){
-            return "You win!"
+            return "Computer chose SCISSOR against your ROCK. You win!"
     } if (playerSelection === "rock" && computerSelection === "rock"){
-        return "Draw!"
+        return "Computer chose ROCK against your ROCK. Draw!"
     } if (playerSelection === "paper" && computerSelection === "scissor"){
-        return "You lose!"
+        return "Computer chose SCISSOR against your PAPER. You lose!"
     } if (playerSelection === "paper" && computerSelection === "rock"){
-            return "You win!"
+            return "Computer chose ROCK against your PAPER. You win!"
     } if (playerSelection === "paper" && computerSelection === "paper"){
-        return "Draw!"
+        return "Computer chose PAPER against your PAPER. Draw!"
     } if (playerSelection === "scissor" && computerSelection === "rock"){
-        return "You lose!"
+        return "Computer chose ROCK against your SCISSOR. You lose!"
     } if (playerSelection === "scissor" && computerSelection === "paper"){
-            return "You win!"
+            return "Computer chose PAPER against your SCISSOR. You win!"
     } if (playerSelection === "scissor" && computerSelection === "scissor"){
-        return "Draw!"}
+        return "Computer chose SCISSOR against your SCISSOR. Draw!"}
 }
 
-//deze onderstaande functie wordt alleen gebruikt om de loop uit te voeren. Dit is een dummy functie.
-// we gaan nu een scorecounter opzetten voor player en computer
-// de twee scorecounters zijn aangemaakt middels variabelen. Als de uitkomst "You lose!" is, dan krijgt de computer +1 punt. "You win!" krijt de player +1 punt. draw = 0 punt
-// we moeten nu nog 
+const rock = document.querySelector('.rock')
+rock.addEventListener('click', () => {
+    console.log(game("rock",));
+  });
 
+  const paper = document.querySelector('.paper')
+paper.addEventListener('click', () => {
+    console.log(game("paper",));
+  });
+
+  const scissor = document.querySelector('.scissor')
+scissor.addEventListener('click', () => {
+    console.log(game("scissor",));
+  });
+
+
+/*
 let playerCounter = 0;
 let computerCounter = 0;
 
-function dummy(){
+function playRound() {
     for (let i = 0; i < 5; i++) {
-        let outcome = (game(prompt("rock, paper or scissor").toLowerCase(),));
+        let outcome = (game(playerSelection,));
         console.log(outcome);
         if (outcome === "You lose!") {
             (computerCounter++)
@@ -52,14 +64,5 @@ function dummy(){
     }
 } 
 
-dummy()
-
-
-/*
-let computerInput = getComputerChoice
-let playerInput = "rock"
-
-var gameOutput = (game(playerInput.toLowerCase(), computerInput))
-
-
+playRound()
 */
